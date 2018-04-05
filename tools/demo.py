@@ -32,7 +32,7 @@ CLASSES = ('__background__',
            'sheep', 'sofa', 'train', 'tvmonitor')
 
 NETS = {'vgg16': ('VGG16',
-                  'VGG16_faster_rcnn_final.caffemodel'),
+                  'VGG16_SalObjSub.caffemodel'),#'VGG16_faster_rcnn_final.caffemodel'),
         'zf': ('ZF',
                   'ZF_faster_rcnn_final.caffemodel')}
 
@@ -126,7 +126,7 @@ if __name__ == '__main__':
         raise IOError(('{:s} not found.\nDid you run ./data/script/'
                        'fetch_faster_rcnn_models.sh?').format(caffemodel))
 
-    if args.cpu_mode:
+    if True: #args.cpu_mode:
         caffe.set_mode_cpu()
     else:
         caffe.set_mode_gpu()
